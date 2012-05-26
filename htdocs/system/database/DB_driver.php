@@ -1162,7 +1162,7 @@ class CI_DB_driver {
 
 		if ($native == TRUE)
 		{
-			$message = $error;
+			$message[] = $error;
 		}
 		else
 		{

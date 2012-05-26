@@ -45,7 +45,7 @@
 | the active record class
 */
 
-$active_group = 'default';
+$active_group = 'sqlite';
 $active_record = TRUE;
 
 $CI =& get_instance();
@@ -65,6 +65,22 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db['sqlite']['hostname'] = '';
+$db['sqlite']['username'] = '';
+$db['sqlite']['password'] = '';
+$db['sqlite']['database'] = 'sqlite:./static/asset/base.db';
+$db['sqlite']['dbdriver'] = 'pdo';
+$db['sqlite']['dbprefix'] = '';
+$db['sqlite']['pconnect'] = TRUE;
+$db['sqlite']['db_debug'] = TRUE;
+$db['sqlite']['cache_on'] = FALSE;
+$db['sqlite']['cachedir'] = '';
+$db['sqlite']['char_set'] = 'utf8';
+$db['sqlite']['dbcollat'] = 'utf8_general_ci';
+$db['sqlite']['swap_pre'] = '';
+$db['sqlite']['autoinit'] = TRUE;
+$db['sqlite']['stricton'] = FALSE;
 
 
 /* End of file database.php */

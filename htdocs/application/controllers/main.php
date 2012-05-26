@@ -49,11 +49,12 @@ class Main extends CI_Controller
 				'last_activity' => array(
 					'type' => 'INT',
 					'constraint' => 10,
-					'unsigned' => TRUE,
+					//'unsigned' => TRUE,
 					'default' => 0,
 				) ,
 				'session_data' => array(
 					'type' => 'TEXT',
+					'null' => TRUE,
 				) ,
 			);
 			$this->dbforge->add_field($fields);
@@ -68,7 +69,7 @@ class Main extends CI_Controller
 				'id' => array(
 					'type' => 'INT',
 					'constraint' => 10,
-					'auto_increment' => TRUE,
+					//'auto_increment' => TRUE,
 				) ,
 				'pid' => array(
 					'type' => 'VARCHAR',
@@ -105,7 +106,7 @@ class Main extends CI_Controller
 				'toexpire' => array(
 					'type' => 'TINYINT',
 					'constraint' => 1,
-					'unsigned' => TRUE,
+					//'unsigned' => TRUE,
 				) ,
 				'snipurl' => array(
 					'type' => 'VARCHAR',
