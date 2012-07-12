@@ -25,43 +25,49 @@ $this->carabiner->config(array(
 ));
 
 // CSS
-$this->carabiner->css('reset.css');
-$this->carabiner->css('fonts.css');
-$this->carabiner->css('main.css');
+$this->carabiner->css('bootstrap.css');
+$this->carabiner->css('bootstrap-responsive.css');
 $this->carabiner->css('codemirror.css');
-$this->carabiner->css('diff.css');
 
 $this->carabiner->display('css'); 
 
 ?>
+	<style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
 	<script type="text/javascript">
 	//<![CDATA[
 	var base_url = '<?php echo base_url(); ?>';
 	//]]>
 	</script>
 	</head>
-	<body>
-		<div id="container">
-			<div class="container">			
-				<div class="header">
-					<h1><a href="<?php echo base_url(); ?>" class="title"><?php echo $this->config->item('site_name'); ?></a></h1>
-					<ul class="tabs">
+	<body>		
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="<?php echo base_url(); ?>" class="title"><?php echo $this->config->item('site_name'); ?></a>
+					<ul class="nav">
 						<?php $l = $this->uri->segment(1)?>
 						<li><a <?php if($l == ""){ echo 'class="active"'; }?> href="<?php echo base_url()?>" title="Create A New Paste">Create</a></li>
-<?php if(!$this->config->item('private_only')){ ?>
+					<?php if(!$this->config->item('private_only')){ ?>
 						<li><a <?php if($l == "lists" || $l == "view" and $this->uri->segment(2) != "options"){ echo 'class="active"'; }?> href="<?php echo site_url('lists'); ?>" title="Recent Pastes">Recent</a></li>
-<?php } ?>
+					<?php } ?>
 						<li><a  <?php if($l == "api"){ echo 'class="active"'; }?> href="<?php echo site_url('api'); ?>" title="API">API</a></li>
 						<li><a  <?php if($l == "about"){ echo 'class="active"'; }?> href="<?php echo site_url('about'); ?>" title="About">About</a></li>
 					</ul>
 				</div>
+			</div>
+		</div>
 
-				<div class="content">
+		<div class="container">
+			<div class="">
+				<?php if(isset($status_message)){?>
+				<div class="message success change">
 					<div class="container">
-						<?php if(isset($status_message)){?>
-						<div class="message success change">
-							<div class="container">
-								<?php echo $status_message; ?>
-							</div>
-						</div>
-						<?php }?>				
+						<?php echo $status_message; ?>
+					</div>
+				</div>
+				<?php }?>				
