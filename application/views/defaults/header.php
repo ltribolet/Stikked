@@ -27,6 +27,7 @@ $this->carabiner->config(array(
 // CSS
 $this->carabiner->css('bootstrap.css');
 $this->carabiner->css('bootstrap-responsive.css');
+$this->carabiner->css('style.css');
 $this->carabiner->css('codemirror.css');
 
 $this->carabiner->display('css'); 
@@ -45,25 +46,27 @@ $this->carabiner->display('css');
 	</script>
 	</head>
 	<body>		
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="<?php echo base_url(); ?>" class="title"><?php echo $this->config->item('site_name'); ?></a>
-					<ul class="nav">
-						<?php $l = $this->uri->segment(1)?>
-						<li><a <?php if($l == ""){ echo 'class="active"'; }?> href="<?php echo base_url()?>" title="Create A New Paste">Create</a></li>
-					<?php if(!$this->config->item('private_only')){ ?>
-						<li><a <?php if($l == "lists" || $l == "view" and $this->uri->segment(2) != "options"){ echo 'class="active"'; }?> href="<?php echo site_url('lists'); ?>" title="Recent Pastes">Recent</a></li>
-					<?php } ?>
-						<li><a  <?php if($l == "api"){ echo 'class="active"'; }?> href="<?php echo site_url('api'); ?>" title="API">API</a></li>
-						<li><a  <?php if($l == "about"){ echo 'class="active"'; }?> href="<?php echo site_url('about'); ?>" title="About">About</a></li>
-					</ul>
+		<header>
+			<div class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="brand" href="<?php echo base_url(); ?>" class="title"><?php echo $this->config->item('site_name'); ?></a>
+						<ul class="nav">
+							<?php $l = $this->uri->segment(1)?>
+							<li><a <?php if($l == ""){ echo 'class="active"'; }?> href="<?php echo base_url()?>" title="Create A New Paste">Create</a></li>
+						<?php if(!$this->config->item('private_only')){ ?>
+							<li><a <?php if($l == "lists" || $l == "view" and $this->uri->segment(2) != "options"){ echo 'class="active"'; }?> href="<?php echo site_url('lists'); ?>" title="Recent Pastes">Recent</a></li>
+						<?php } ?>
+							<li><a  <?php if($l == "api"){ echo 'class="active"'; }?> href="<?php echo site_url('api'); ?>" title="API">API</a></li>
+							<li><a  <?php if($l == "about"){ echo 'class="active"'; }?> href="<?php echo site_url('about'); ?>" title="About">About</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
+		</header>
 
 		<div class="container">
-			<div class="">
+			<section>
 				<?php if(isset($status_message)){?>
 				<div class="message success change">
 					<div class="container">

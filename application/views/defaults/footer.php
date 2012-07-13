@@ -1,6 +1,6 @@
-			</div>
+			</section>
+			<?php $this->load->view('defaults/footer_message'); ?>
 		</div>
-	<?php $this->load->view('defaults/footer_message'); ?>
 <?php
 
 //codemirror modes

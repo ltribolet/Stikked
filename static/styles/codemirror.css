@@ -10,6 +10,12 @@
      is visible outside of the scrolling box. */
   position: relative;
   outline: none;
+  -webkit-box-shadow: inset 40px 0 0 #FBFBFC, inset 41px 0 0 #ECECF0;
+  -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+  box-shadow: inset 40px 0 0 #FBFBFC, inset 41px 0 0 #ECECF0;
+  padding: 8px;
+  background-color: #F7F7F9;
+  border: 1px solid #E1E1E8;
 }
 
 .CodeMirror-gutter {
