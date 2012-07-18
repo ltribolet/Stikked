@@ -1,59 +1,35 @@
-var CM = window.CM || {}
+$(function() {
+	modes = $.parseJSON($('#codemirror_modes').text());
 
-CM.enabled = false;
-
-CM.init = function() {
-	CM.modes = $.parseJSON($('#codemirror_modes').text());
-	$('#enable_codemirror').click(function() {
-		$('#lang').change(function() {
-			CM.set_language();
-		});
-		CM.toggle();
-		CM.set_language();
-		return false;
+	var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+		mode: "scheme",
+		lineNumbers: true,
+		matchBrackets: true,
+		tabMode: "indent"
 	});
-};
 
-CM.toggle = function() {
-	if (CM.enabled) {
-		CM.editor.toTextArea();
-		CM.editor = undefined;
-		$('#lang').unbind();
-		$('#enable_codemirror').text('Enable syntax highlighting');
-		CM.enabled = false;
-	} else {
-		if (typeof CM.editor == 'undefined') {
-			CM.editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-				lineNumbers: true,
-				lineWrapping: true,
-			});
-		}
-		$('#enable_codemirror').text('Disable syntax highlighting');
-		CM.enabled = true;
-	}
-};
+	$('#lang').change(function() {
+			set_language();
+	});
 
-CM.set_language = function() {
-	if (CM.enabled) {
+	set_syntax = function(mode) {
+		editor.setOption('mode', mode);
+	};
+
+	set_language = function() {
+
 		var lang = $('#lang').val();
-		mode = CM.modes[lang];
+		mode = modes[lang];
 
 		$.get(base_url + 'main/get_cm_js/' + lang,
-		function(data) {
-			if (data != '') {
-				CM.set_syntax(mode);
-			} else {
-				CM.set_syntax(null);
-			}
-		},
-		'script');
-	}
-};
-
-CM.set_syntax = function(mode) {
-	CM.editor.setOption('mode', mode);
-};
-
-$(document).ready(function() {
-	CM.init();
+			function(data) {
+				if (data !== '') {
+				set_syntax(mode);
+				} else {
+				set_syntax(null);
+				}
+			},
+			'script'
+		);
+	};
 });

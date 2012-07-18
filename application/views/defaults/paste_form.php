@@ -44,12 +44,12 @@
 				<div class="span12">
 					<label for="paste">Your paste
 						<span class="instruction">Paste your paste here</span>
-						<span class="instruction"><a href="#" id="enable_codemirror">Enable syntax highlighting</a></span>
+						<!-- <span class="instruction"><a href="#" id="enable_codemirror">Enable syntax highlighting</a></span> -->
 					</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+				<div class="span11">
 					<textarea id="code" class="span11" name="code" rows="20" tabindex="4"><?php if(isset($paste_set)){ echo $paste_set; }?></textarea>
 				</div>
 			</div>

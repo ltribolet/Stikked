@@ -1,24 +1,11 @@
 .CodeMirror {
   line-height: 1em;
   font-family: monospace;
-  margin: 10px 0px;
+
   /* Necessary so the scrollbar can be absolutely positioned within the wrapper on Lion. */
   position: relative;
   /* This prevents unwanted scrollbars from showing up on the body and wrapper in IE. */
   overflow: hidden;
-  background-color: white;
-  border: 1px solid #CCC;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-  transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 
 .CodeMirror-scroll {
@@ -65,19 +52,10 @@
 .CodeMirror-gutter {
   position: absolute; left: 0; top: 0;
   z-index: 10;
-  background-color: #F7F7F9;
+  background-color: #f7f7f7;
   border-right: 1px solid #eee;
   min-width: 2em;
   height: 100%;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  -webkit-box-shadow: inset 1px 0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: inset 1px 0 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 1px 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .CodeMirror-gutter-text {
   color: #aaa;
