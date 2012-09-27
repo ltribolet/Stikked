@@ -79,6 +79,27 @@
   -moz-box-shadow: inset 1px 0 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 1px 0 1px 1px rgba(0, 0, 0, 0.075);
 }
+blockquote.CodeMirror {
+  background-color: #F7F7F9;
+  border-right: 1px solid #eee;
+  min-width: 2em;
+  height: 100%;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-box-shadow: inset 1px 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 1px 0 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 1px 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+blockquote.CodeMirror ol {
+  z-index: 10;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 0;
+}
 .CodeMirror-gutter-text {
   color: #aaa;
   text-align: right;

@@ -1,4 +1,3 @@
-			</section>
 			<?php $this->load->view('defaults/footer_message'); ?>
 		</div>
 <?php
@@ -14,9 +13,12 @@ $this->load->view('defaults/stats');
 //Javascript
 $this->carabiner->js('jquery.js');
 $this->carabiner->js('jquery.timers.js');
-$this->carabiner->js('stikked.js');
+$this->carabiner->js('jquery.dataTables.min.js');
 $this->carabiner->js('codemirror/lib/codemirror.js');
 $this->carabiner->js('codemirror_exec.js');
+
+
+$this->carabiner->js('stikked.js');
 
 $this->carabiner->display('js');
 

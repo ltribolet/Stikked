@@ -6,7 +6,7 @@
  * The name of your site
  *
 */
-$config['site_name'] = 'Stikked';
+$config['site_name'] = 'Bootstikked';
 
 /**
  * Database connection
@@ -15,7 +15,7 @@ $config['site_name'] = 'Stikked';
  * The database structure will be created automatically
  *
 */
-$config['db_hostname'] = '127.0.0.1';
+$config['db_hostname'] = 'localhost';
 $config['db_database'] = 'stikked';
 $config['db_username'] = 'stikked';
 $config['db_password'] = 'stikked';

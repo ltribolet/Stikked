@@ -33,12 +33,6 @@ $this->carabiner->css('codemirror.css');
 $this->carabiner->display('css'); 
 
 ?>
-	<style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-    </style>
 	<script type="text/javascript">
 	//<![CDATA[
 	var base_url = '<?php echo base_url(); ?>';
@@ -66,7 +60,6 @@ $this->carabiner->display('css');
 		</header>
 
 		<div class="container">
-			<section>
 				<?php if(isset($status_message)){?>
 				<div class="message success change">
 					<div class="container">

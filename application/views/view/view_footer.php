@@ -11,7 +11,7 @@ $this->load->view('defaults/stats');
 $this->carabiner->js('jquery.js');
 $this->carabiner->js('jquery.timers.js');
 $this->carabiner->js('stikked.js');
-$this->carabiner->js('codemirror/codemirror.js');
+$this->carabiner->js('codemirror/lib/codemirror.js');
 $this->carabiner->js('codemirror_exec.js');
 $this->carabiner->display('js');
 
