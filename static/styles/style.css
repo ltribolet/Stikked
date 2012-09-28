@@ -1,7 +1,11 @@
-body {
-	position: relative;
-	padding-top: 40px;
+@media (min-width: 980px) {
+	body {
+		position: relative;
+		padding-top: 40px;
+	}
 }
+
+
 
 /* Footer
 -------------------------------------------------- */
