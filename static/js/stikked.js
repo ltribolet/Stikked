@@ -238,7 +238,7 @@ var CM = {
 			set_language();
 		}
 	}
-}
+};
 
 $(document).ready(function() {
 	ST.init();
@@ -250,7 +250,15 @@ $(document).ready(function() {
 			"sPaginationType": "bootstrap",
 			"oLanguage": {
 				"sLengthMenu": "_MENU_ records per page"
-			}
+			},
+			"aaSorting": [[4,'desc']],
+			"aoColumns": [
+				null,
+				null,
+				null,
+				null,
+				{ "iDataSort": 3}
+			]
 		} );
 	}
 });

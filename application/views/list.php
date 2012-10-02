@@ -13,6 +13,7 @@
 						<th class="title">Title</th>
 						<th class="name">Name</th>
 						<th class="lang">Language</th>
+						<th class="hidden">UNIX</th>
 						<th class="time">When</th>
 					</tr>
 				</thead>
@@ -25,6 +26,7 @@
 			<td class="first"><a href="<?php echo site_url("view/".$paste['pid']); ?>"><?php echo $paste['title']; ?></a></td>
 			<td><?php echo $paste['name']; ?></td>
 			<td><?php echo $paste['lang']; ?></td>
+			<td class="hidden"><?php echo $paste['created']; ?></td>
 			<td><?php $p = explode(",", timespan($paste['created'], time())); echo $p[0]; ?> ago.</td>
 		</tr>
 

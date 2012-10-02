@@ -45,13 +45,16 @@ if(isset($replies) and !empty($replies)){
 	<h1>Replies to <?php echo $title; ?> <a href="<?php echo site_url('view/rss/' . $pid); ?>"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJDSURBVHjajJJNSBRhGMd/887MzrQxRSLbFuYhoUhEKsMo8paHUKFLdBDrUIdunvq4RdClOq8Hb0FBSAVCUhFR1CGD/MrIJYqs1kLUXd382N356plZFOrUO/MMz/vO83+e93n+f+1zF+kQBoOQNLBJg0CTj7z/rvWjGbEOIwKp9O7WkhtQc/wMWrlIkP8Kc1lMS8eyFHpkpo5SgWCCVO7Z5JARhuz1Qg29fh87u6/9VWL1/SPc4Qy6n8c0FehiXin6dcCQaylDMhqGz8ydS2hKkmxNkWxowWnuBLHK6G2C8X6UJkBlxUmNqLYyNbzF74QLDrgFgh9LLE0NsPKxjW1Hz2EdPIubsOFdH2HgbwAlC4S19dT13o+3pS+vcSfvUcq9YnbwA6muW9hNpym/FWBxfh0CZkKGkPBZeJFhcWQAu6EN52QGZ/8prEKW+cdXq0039UiLXhUYzdjebOJQQI30UXp6mZn+Dtam32Afu0iyrgUvN0r+ZQbr8HncSpUVJfwRhBWC0hyGV8CxXBL5SWYf9sYBidYLIG2V87/ifVjTWAX6AlxeK2C0X8e58hOr/Qa2XJ3iLMWxB1h72tHs7bgryzHAN2o2gJorTrLxRHVazd0o4TXiyV2Yjs90uzauGvvppmqcLjwmbZ3V7BO2HOrBnbgrQRqWUgTZ5+Snx4WeKfzCCrmb3axODKNH+vvUyWjqyK4DiKQ0eXSpFsgVvLJQWpH+xSpr4otg/HI0TR/t97cxTUS+QxIMRTLi/9ZYJPI/AgwAoc3W7ZrqR2IAAAAASUVORK5CYII=" alt="rss" title="RSS" /></a></h1>
 	
 	<table cellpadding="0" cellspacing="0" border="0" class="recent table table-striped table-bordered">
-		<tbody>
+		<thead>
 			<tr>
 				<th class="title">Title</th>
 				<th class="name">Name</th>
+				<th class="lang">Language</th>
+				<th class="hidden">UNIX</th>
 				<th class="time">When</th>
 			</tr>
-
+		</thead>
+		<tbody>
 	<?php foreach($replies as $reply){
 			if(checkNum($n)){
 				$eo = "even";
@@ -64,6 +67,8 @@ if(isset($replies) and !empty($replies)){
 		<tr class="<?php echo $eo; ?>">
 			<td class="first"><a href="<?php echo site_url("view/".$reply['pid']); ?>"><?php echo $reply['title']; ?></a></td>
 			<td><?php echo $reply['name']; ?></td>
+			<td><?php echo $reply['lang']; ?></td>
+			<td class="hidden"><?php echo $reply['created']; ?></td>
 			<td><?php $p = explode(",", timespan($reply['created'], time())); echo $p[0];?> ago.</td>
 		</tr>
 

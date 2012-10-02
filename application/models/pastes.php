@@ -207,7 +207,7 @@ class Pastes extends CI_Model
 		
 		if ($inreply) 
 		{
-			$this->db->select('name, title');
+			$this->db->select('name, title', 'lang');
 			$this->db->where('pid', $inreply);
 			$query = $this->db->get('pastes');
 			
@@ -217,6 +217,7 @@ class Pastes extends CI_Model
 				{
 					$data['inreply']['title'] = $row['title'];
 					$data['inreply']['name'] = $row['name'];
+					$data['replies']['lang'] = $row['lang'];
 					$data['inreply']['url'] = site_url('view/' . $inreply);
 				}
 			}
@@ -238,7 +239,7 @@ class Pastes extends CI_Model
 			{
 				$page = $this->uri->segment(3);
 			}
-			$this->db->select('title, name, created, pid, snipurl');
+			$this->db->select('title, name, , lang, created, pid, snipurl');
 			$this->db->where('replyto', $data['pid']);
 			$this->db->order_by('id', 'desc');
 			$this->db->limit($amount);
@@ -251,6 +252,7 @@ class Pastes extends CI_Model
 				{
 					$data['replies'][$n]['title'] = $row['title'];
 					$data['replies'][$n]['name'] = $row['name'];
+					$data['replies'][$n]['lang'] = $row['lang'];
 					$data['replies'][$n]['created'] = $row['created'];
 					$data['replies'][$n]['pid'] = $row['pid'];
 					$data['replies'][$n]['snipurl'] = $row['snipurl'];
@@ -300,6 +302,7 @@ class Pastes extends CI_Model
 			{
 				$data['replies'][$n]['title'] = $row['title'];
 				$data['replies'][$n]['name'] = $row['name'];
+				$data['replies'][$n]['lang'] = $row['lang'];
 				$data['replies'][$n]['created'] = $row['created'];
 				$data['replies'][$n]['pid'] = $row['pid'];
 				
