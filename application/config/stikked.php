@@ -2,7 +2,7 @@
 
 /**
  * Site Name
- * 
+ *
  * The name of your site
  *
 */
@@ -10,7 +10,7 @@ $config['site_name'] = 'Bootstikked';
 
 /**
  * Database connection
- * 
+ *
  * Credentials for your database
  * The database structure will be created automatically
  *
@@ -22,7 +22,7 @@ $config['db_password'] = 'stikked';
 
 /**
  * Combine JS & CSS files
- * 
+ *
  * htdocs/static/asset/ folder must be writeable
  *
 */
